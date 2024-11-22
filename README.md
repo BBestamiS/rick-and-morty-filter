@@ -1,5 +1,8 @@
 # Rick and Morty Filter Uygulaması – Proje Dokümanı
 
+![Screenshot 2024-11-22 at 14 00 51](https://github.com/user-attachments/assets/2f486974-fdfe-4068-b4f4-2affd8d4c6fa)
+
+
 Bu doküman, projeyi nasıl kuracağınızı, çalıştıracağınızı ve yapısını açıklar.
 
 ---
