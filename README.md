@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty Filter Uygulaması – Proje Dokümanı
 
-## Getting Started
+Bu doküman, projeyi nasıl kuracağınızı, çalıştıracağınızı ve yapısını açıklar.
 
-First, run the development server:
+---
+
+## **1. Proje Gereksinimleri**
+
+Bu projeyi çalıştırmak için aşağıdaki araçların sisteminizde kurulu olduğundan emin olun:
+
+### Gereksinimler:
+
+- **Node.js**: 18.x veya üstü
+- **NPM**: 8.x veya üstü (Node.js ile birlikte gelir)
+- **GIT**: Kaynak kodu klonlamak için
+
+---
+
+## **2. Projeyi Klonlayın**
+
+Kaynak kodu yerel makinenize indirmek için şu komutu kullanın:
+
+```bash
+git clone https://github.com/BBestamiS/rick-and-morty-filter.git
+```
+
+Proje klasörüne geçin:
+
+```bash
+cd rick-and-morty-filter
+```
+
+---
+
+## **3. Bağımlılıkları Yükleyin**
+
+Proje için gerekli bağımlılıkları yüklemek için şu komutu çalıştırın:
+
+```bash
+npm install
+```
+
+---
+
+## **4. Projeyi Çalıştırın**
+
+Uygulamayı geliştirme ortamında çalıştırmak için şu komutu çalıştırın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Komut çalıştırıldıktan sonra aşağıdaki gibi bir mesaj görmelisiniz:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+> Ready on http://localhost:3001
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tarayıcınızda `http://localhost:3001` adresine giderek uygulamayı çalıştırabilirsiniz.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## **5. Proje Yapısı**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Projenin dosya ve klasör yapısı şu şekildedir:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```plaintext
+src/
+└── app/
+    ├── fonts/                # Font dosyaları (isteğe bağlı)
+    ├── globals.css           # Global CSS stilleri
+    ├── layout.tsx            # Tüm sayfalar için genel düzen
+    ├── page.tsx              # Ana sayfa bileşeni
+    ├── components/           # Tekrar kullanılan bileşenler
+    │   ├── CharacterCard.tsx # Karakter kartı bileşeni
+    │   └── FilterBar.tsx     # Filtreleme bileşeni
+    └── types/
+        └── character.ts      # Tür tanımları
+```
 
-## Deploy on Vercel
+### **Önemli Dosyalar**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **`app/layout.tsx`:** Genel sayfa düzenini sağlar.
+2. **`app/page.tsx`:** Ana sayfa bileşenidir. SSR kullanır.
+3. **`app/components/FilterBar.tsx`:** Status ve Gender filtrelerini sağlar.
+4. **`app/components/CharacterCard.tsx`:** Karakter kartlarının tasarımını içerir.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **6. Özellikler**
+
+- **Filtreleme:**
+  - `Status` (Alive, Dead, Unknown)
+  - `Gender` (Male, Female, Genderless, Unknown)
+  - Filtreler URL parametreleri ile senkronize çalışır.
+- **SSR (Server-Side Rendering):** Sunucu tarafında veriler alınır ve filtreleme yapılır.
+- **Responsive Tasarım:** Mobil ve masaüstü cihazlarda uyumludur.
+- **Modern Tasarım:** Tailwind CSS ile şık bir arayüz.
+
+---
+
+## **7. Komutlar**
+
+### Geliştirme Ortamı:
+
+```bash
+npm run dev
+```
+
+### Üretim Ortamı için Build:
+
+```bash
+npm run build
+```
+
+### Üretim Ortamını Çalıştırma:
+
+```bash
+npm start
+```
+
+---
+
+## **8. Projenin Kullanımı**
+
+1. `http://localhost:3001` adresine gidin.
+2. **Filtreleme İşlemi:**
+   - Status ve Gender seçeneklerini kullanarak karakterleri filtreleyin.
+3. **URL Tabanlı Filtreleme:**
+   - Filtreleme yaptığınızda URL parametreleri otomatik olarak güncellenir.
+
+---
